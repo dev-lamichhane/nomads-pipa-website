@@ -2,6 +2,7 @@ import { Inter, Fira_Code } from "next/font/google";
 import "../styles/globals.css";
 import { NextStudio } from "next-sanity/studio";  // Import NextStudio
 import config from "../../sanity.config";  // Import config
+import {AppProps} from "next/app";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ const firaCode = Fira_Code({
   variable: "--font-mono",
 });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={`${inter.variable} ${firaCode.variable} antialiased`}>
       {pageProps?.studio ? (
